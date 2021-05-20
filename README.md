@@ -1,2 +1,3 @@
 # bocchii
- offline @party
+ ＠パーティー2のjavascript版ぽいなにか
+ node.jsよくわかんないのでとりあえずオフラインです
