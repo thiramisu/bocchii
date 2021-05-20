@@ -672,7 +672,7 @@ addEventListener("load", () => {
 
     #セーブ先から読み込み() {
       const データ = セーブデータ.#セーブ先.getItem(this.#名前);
-      this.#データ = データ ?? this.#データ;
+      this.#データ = (データ ?? this.#データ) ?? this.#デフォルト値;
       if (this.#整数か) {
         this.#データ = parseInt(this.#データ);
       }
