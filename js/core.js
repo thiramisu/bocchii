@@ -130,7 +130,7 @@ addEventListener("load", () => {
         indexedDB.deleteDatabase(データベース操作.#データベース名);
         セーブデータ.データベースバージョン.削除();
       }
-      const バージョン = セーブデータ.データベースバージョン.取得();
+      const バージョン = セーブデータ.データベースバージョン.取得() ?? 0;
       データベース操作.#バージョン = バージョン;
       const リクエスト = indexedDB.open(データベース操作.#データベース名, バージョン);
       リクエスト.addEventListener("upgradeneeded", データベース操作.#データベースをアップグレード);
