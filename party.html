@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf8" />
+  <link rel="shortcut icon" href="resource/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/party.css" />
+  <title>＠ぼっちぃー</title>
+  <script type="text/javascript" src="js/core.js" defer></script>
+</head>
+
+<body class="＠パーティーII">
+  <div id="メイン" class="トップ">
+    <header id="トップ-ヘッダー" class="トップ-ヘッダー">
+      <a class="疑似リンク トップ-ヘッダー-リンク" data-ページ="index.cgi">
+        <h1><img src="resource/title.png" alt="＠ぼっちぃー"></h1>
+      </a>
+      <div id="ランダムアイコン"></div>
+    </header>
+    <nav class="ナビゲーション">
+      <a class="疑似リンク menu_button" data-ページ="index.cgi">＠トップ<div class="text_small">トップページ</div></a>
+      <a class="疑似リンク menu_button" data-ページ="new_entry.cgi">＠新規登録<div class="text_small">説明書の初心者ﾌﾟﾚｲﾁｬｰﾄ必読
+        </div></a>
+      <a href="http://www19.atwiki.jp/atparty2/" class="menu_button">＠説明書<div class="text_small">
+          ＠パーティーIIについて</div></a>
+      <a class="疑似リンク menu_button" data-ページ="news.cgi">＠ニュース<div class="text_small">最近の出来事</div></a>
+      <a class="疑似リンク menu_button" data-ページ="contest.cgi">＠フォトコン<div class="text_small">みんなが撮ったｽｸｰﾌﾟ映像</div>
+      </a>
+      <a class="疑似リンク menu_button" data-ページ="player_list.html">＠ﾌﾟﾚｲﾔｰ一覧<div class="text_small">転職回数、レベル順</div>
+      </a>
+      <a class="疑似リンク menu_button" data-ページ="guild_list.cgi"> ＠ギルド勢力<div class="text_small">各ギルドとそのメンバー
+        </div></a>
+      <a class="疑似リンク menu_button" data-ページ="challenge.cgi">＠世界記録<div class="text_small">＠チャレンジの最高記録保持者
+        </div></a>
+      <a class="疑似リンク menu_button" data-ページ="ranking.cgi">＠ランキング<div class="text_small">活躍しているトッププレイヤー</div>
+      </a>
+      <a class="疑似リンク menu_button" data-ページ="legend.cgi">＠伝説のﾌﾟﾚｲﾔｰ<div class="text_small">コンプリートプレイヤー</div>
+      </a>
+      <a class="疑似リンク menu_button" data-ページ="job_ranking.cgi">＠職業ランキング<div class="text_small">人気の職業は！？
+        </div></a>
+      <a class="疑似リンク menu_button" data-ページ="rescue.cgi">＠救出処理<div class="text_small">バグ救出</div></a>
+      <!-- a class="menu_button">＠削除処理<div class="text_small">データ削除</div></a -->
+      <a class="menu_button">＠ＨＯＭＥ<div class="text_small">ホームページへ</div></a>
+    </nav>
+    <div class="コンテンツ">
+      <article id="index.cgi" hidden>
+        <div class="トップ-コンテンツ-段">
+          <div class="トップ-コンテナ プレイヤー関連情報">
+            <div class="ログインプレイヤーリスト">
+              <div style="color: #99c;">
+                <a href="#player.cgi?id=$yid" style="color: #99c; text-decoration: none;" target="_blank"><img
+                    src="resource/icon/job/28_m.gif" />xxx</a>＠$guild＠$message
+              </div>
+            </div>
+            <div>ログイン中 9999 人</div>
+            ﾌﾟﾚｲﾔｰ保存期間 <span id="プレイヤー自動削除日数"></span>日（転職0回 Lv2以下の場合は<span id="新規プレイヤー自動削除日数"></span>日）<br />
+            定員 <span id="登録者数"></span> / <span id="最大登録人数"></span>人
+          </div>
+          <form name="ログイン" action="#login.cgi" class="トップ-コンテナ">
+            <table class="table1 ログイン情報入力欄">
+              <tr>
+                <th>§プレイヤー§</th>
+              </tr>
+              <tr>
+                <td class="ログイン情報入力欄-td"><input type="text" name="login_name" class="プレイヤーデータ入力欄">
+                </td>
+              </tr>
+              <tr>
+                <th>§パスワード§</th>
+              </tr>
+              <tr>
+                <td class="ログイン情報入力欄-td"><input type="password" name="pass" class="プレイヤーデータ入力欄" />
+                </td>
+              </tr>
+              <tr>
+                <th>§メッセージ§</th>
+              </tr>
+              <tr>
+                <td class="ログイン情報入力欄-td"><input type="text" name="login_message" class="プレイヤーデータ入力欄" />
+                </td>
+              </tr>
+              <tr>
+                <th><input type="checkbox" name="is_cookie" /> 次回から入力省略</th>
+              </tr>
+              <tr>
+                <th><input type="submit" value="＠ログイン" /></th>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <a class="トップ-すくしょヘッダー 疑似リンク" data-ページ="screen_shot.cgi">最近のスクリーンショット</a>
+        <div>$line</div>
+      </article>
+      <article id="screen_shot.cgi">
+
+      </article>
+      <article id="new_entry.cgi" hidden>
+        <h2>新規登録</h2>
+        <form name="新規登録フォーム">
+          <ul>
+            <li>記号(,;"'&amp;&lt;&gt;\/@)や空白は使えません。</li>
+            <li>ネットマナーを守って楽しく遊びましょう。</li>
+            <li><span class="強調">他人が不愉快になるような書き込みや多重登録は禁止です。見つけ次第削除します。</span></li>
+          </ul>
+          <table class="table1">
+            <tr>
+              <th class="新規登録-th">プレイヤー名：</th>
+              <td class="新規登録-td"><input type="text" name="名前" class="プレイヤーデータ入力欄" /><span
+                  class="新規登録-説明">全角４(半角８)文字まで</span></td>
+            </tr>
+            <tr>
+              <th class="新規登録-th">パスワード：</th>
+              <td class="新規登録-td"><input type="text" name="パスワード" class="プレイヤーデータ入力欄" /><span
+                  class="新規登録-説明">半角英数字４～12文字まで</span></td>
+            </tr>
+            <tr>
+              <th class="新規登録-th">職業：</th>
+              <td class="新規登録-td"><select name="職業" class="select1">
+                </select><span class="新規登録-説明">職業は重要です。説明書の特徴をよく読み、自分に合った職業を選びましょう</span></td>
+            </tr>
+            <tr>
+              <th class="新規登録-th">性別：</th>
+              <td class="新規登録-td">
+                <div class="新規登録-性別選択"><input type="radio" name="性別" value="男" checked="checked" />男　<input type="radio"
+                    name="性別" value="女" />女</div><span class="新規登録-説明">性別によって転職できる職業やアイコンが違います</span>
+              </td>
+            </tr>
+          </table>
+          <p><input type="submit" value="＠登録" /></p>
+        </form>
+      </article>
+      <article id="新規登録完了" hidden>
+        <p>以下の内容で登録しました</p>
+        <p class="strong">※プレイヤー名とパスワードはログインするときに必要なので、忘れないように!
+        <p>
+        <table class="table1">
+          <tr>
+            <th>プレイヤー</th>
+            <td id="新規登録完了-名前"></td>
+          <tr>
+            <th>パスワード</th>
+            <td id="新規登録完了-パスワード"></td>
+          <tr>
+            <th>性別</th>
+            <td id="新規登録完了-性別"></td>
+          <tr>
+            <th>職業</th>
+            <td id="新規登録完了-職業"></td>
+          <tr>
+            <th>ＨＰ</th>
+            <td id="新規登録完了-ＨＰ" class="数値"></td>
+          <tr>
+            <th>ＭＰ</th>
+            <td id="新規登録完了-ＭＰ" class="数値"></td>
+          <tr>
+            <th>攻撃力</th>
+            <td id="新規登録完了-攻撃力" class="数値"></td>
+          <tr>
+            <th>守備力</th>
+            <td id="新規登録完了-守備力" class="数値"></td>
+          <tr>
+            <th>素早さ</th>
+            <td id="新規登録完了-素早さ" class="数値"></td>
+        </table>
+        <div>
+          説明書は読みましたか？<br />
+          わからないことがある場合は、まず説明書を読みましょう。
+        </div>
+        <form name="新規ログイン" method="$method">
+          <input type="checkbox" name="is_cookie" checked hidden />
+          <input type="hidden" name="login_name" />
+          <input type="hidden" name="pass" />
+          <input type="submit" value="＠プレイ" />
+        </form>
+      </article>
+      <article id="news.cgi" hidden>
+        <h2>最近の出来事</h2>
+        <div>
+          なも という冒険者が参加しました <span class="タイムスタンプ">(3/19 02:07)</span>
+        </div>
+        <hr />
+      </article>
+      <article id="contest.cgi" data-パラメーター="mode" data-デフォルトページ="current" data-パラメータ常時表示="false" data-遷移後リンク無効化="true"
+        hidden>
+        新フォトコン確認処理などcontest.cgi
+        <p class="疑似リンク-ラッパー"><a data-親ページ="contest.cgi" data-ページ="current" class="疑似リンク">現在のコンテスト</a> / <a
+            data-親ページ="contest.cgi" data-ページ="past" class="疑似リンク">前回のコンテスト</a> / <a data-親ページ="contest.cgi"
+            data-ページ="legend" class="疑似リンク">殿堂入り</a></p>
+        <div id="contest.cgi-current" hidden>
+          <h2>第$round回フォトコンテスト</h2>
+          【投票終了日・次回コンテスト $month月$day日$hour時$min分】
+          <hr />
+          <div id="フォトコン-現在-作品">
+            <h3>題名『$stitle』</h3>$photo<br />
+          </div>
+          <div id="フォトコン-現在-開催延期" hidden>投稿作品が集まっていないため開催延期中です</div>
+        </div>
+        <div id="contest.cgi-past" hidden>
+          <h2>第${this.回数}回結果発表</h2>
+          ※１位の作品に投票された人には小さなメダルが送られます
+          <hr />
+          <h3>${this.順位}位 <span class="強調">${this.票数}</span>票 題名『${this.タイトル}』 作:${this.撮影者}${this.撮影者.ギルド ?
+            `＠${this.撮影者.ギルド}` : ""}
+          </h3>
+          ${this.メンバー}
+          ${this.コメント とは 何}<br />
+        </div>
+        <div id="contest.cgi-legend" hidden>
+          <h2>殿堂入り</h2>
+          <hr />
+          <h3>第${this.回数}回優秀作品『${this.タイトル}』 <span class="強調">${this.票数}</span>票 作：${this.撮影者} <span
+              class="text_small">(${日時})</span></h3>
+          ${this.すくしょ}<br />
+        </div>
+      </article>
+      <article id="player_list.html" hidden>
+        <table id="プレイヤー一覧" class="tablesorter">
+          <thead>
+            <tr>
+              <th>名前</th>
+              <th>性別</th>
+              <th>ギルド</th>
+              <th>Lv</th>
+              <th>転職</th>
+              <th>職業</th>
+              <th>前職業</th>
+              <th>ＨＰ</th>
+              <th>ＭＰ</th>
+              <th>攻撃</th>
+              <th>守備</th>
+              <th>素早</th>
+              <th>ｺﾞｰﾙﾄﾞ</th>
+              <th>ｺｲﾝ</th>
+              <th>ﾒﾀﾞﾙ</th>
+              <th>武器</th>
+              <th>防具</th>
+              <th>道具</th>
+              <th>ﾓﾝｽﾀｰ撃退</th>
+              <th>ﾌﾟﾚｲﾔｰ撃退</th>
+              <th>封印</th>
+              <th>解放</th>
+              <th>ｶｼﾞﾉ</th>
+              <th>最終ログイン</th>
+            </tr>
+          </thead>
+        </table>
+      </article>
+      <article id="guild_list.cgi" hidden>
+        <p>更新日時 1/1 01:01</p>
+        <h2>ギルド勢力</h2>
+        <div class="ギルドランキング-コンテナ">
+          <div class="ギルドランキング-インナー">
+            1位 <span style="color: #FFF">
+              <!-- img src="mark.gif" alt="ギルドマーク" /--> ${this.名前}
+            </span>
+            <!--　<span
+            class="強調">${this.メンバー.Count()}</span>人 　<span class="強調">${this.ポイント}</span>Point　 ${this.メッセージ}-->
+          </div>
+          <div class="ギルドランキング-インナー" style="color: #FFF;">
+            <img src="resource/icon/etc/mark_leader.gif" />
+            ${this.メンバー.join("、 ")}ﾎﾞﾘﾝｼﾞｬｰ＠ギルマス、 彡(ﾟ)(ﾟ)＠やきう民、 うんこ＠うんち、 ｼｵﾀｸﾝ＠なんJの闇、 ガッツＪ＠北のサムライ、 nest＠参謀
+          </div>
+        </div>
+        <div class="ギルドランキング-コンテナ">
+          <div class="ギルドランキング-インナー">
+            2位 <span style="color: #FFF"><img src="resource/icon/mark/012.gif" alt="ギルドマーク" /> ${this.名前}</span>
+            <!--　<span
+            class="強調">${this.メンバー.Count()}</span>人 　<span class="強調">${this.ポイント}</span>Point　 ${this.メッセージ}-->
+          </div>
+          <div class="ギルドランキング-インナー" style="color: #FFF;">
+            <img src="resource/icon/etc/mark_leader.gif" />
+            ${this.メンバー.join("、 ")}ﾎﾞﾘﾝｼﾞｬｰ＠ギルマス
+          </div>
+        </div>
+        <div class="ギルドランキング-コンテナ">
+          <div class="ギルドランキング-インナー">
+            2位 <span style="color: #FFF"><img src="resource/icon/mark/017.gif" alt="ギルドマーク" /> ${this.名前}</span>
+            <!--　<span
+            class="強調">${this.メンバー.Count()}</span>人 　<span class="強調">${this.ポイント}</span>Point　 ${this.メッセージ}-->
+          </div>
+          <div class="ギルドランキング-インナー" style="color: #FFF;">
+            <img src="resource/icon/etc/mark_leader.gif" />
+            ${this.メンバー.join("、 ")}ﾎﾞﾘﾝｼﾞｬｰ＠ギルマス
+          </div>
+        </div>
+      </article>
+      <article id="challenge.cgi" data-パラメーター="no" data-デフォルトページ="0" data-遷移後リンク無効化="true" hidden>
+        <p class="疑似リンク-ラッパー"><a class="疑似リンク" data-親ページ="challenge.cgi" data-ページ="0">${this.名前}</a> / <a class="疑似リンク"
+            data-親ページ="challenge.cgi" data-ページ="1">${this.名前}</a> /
+        </p>
+        <div id="challenge.cgi-0" hidden>
+          <h2>【${a}】${b}
+            <!--Lv.${this.到達レベル} (${this.日時})-->
+          </h2>
+          <table class="table1">
+            <tr>
+              <th>名前</th>
+              <th>職業</th>
+              <th>ステータス</th>
+            </tr>
+            <tr>
+              <td>めんばー.色とアイコンと名前とギルドを出力(false)</td>
+              <td>[${this.現職SP} / ${this.前職SP}]</td>
+              <td>$e2j{hp}<span class="強調">${this.HP}</span> / $e2j{mp}<span class="強調">${this.MP}</span> /
+                $e2j{at}<span class="強調">${this.攻撃力}</span> /
+                $e2j{df}<span class="強調">${this.守備力}</span> / $e2j{ag}<span class="強調">${this.素早さ}</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="challenge.cgi-1" data-パラメーター="no" data-デフォルトページ="0" data-遷移後リンク無効化="true" hidden>
+          <h2>【${this.ステージ名}】${this.パーティー名}
+            <!--Lv.${this.到達レベル} (${this.日時})-->
+          </h2>
+          <table class="table1">
+            <tr>
+              <th>名前</th>
+              <th>職業</th>
+              <th>ステータス</th>
+            </tr>
+            <tr>
+              <td>めんばー.色とアイコンと名前とギルドを出力(false)</td>
+              <td>[${this.現職SP} / ${this.前職SP}]</td>
+              <td>$e2j{hp}<span class="強調">${this.HP}</span> / $e2j{mp}<span class="強調">${this.MP}</span> /
+                $e2j{at}<span class="強調">${this.攻撃力}</span> /
+                $e2j{df}<span class="強調">${this.守備力}</span> / $e2j{ag}<span class="強調">${this.素早さ}</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <article id="ranking.cgi" data-パラメーター="no" data-デフォルトページ="0" data-遷移後リンク無効化="true" hidden>
+        <p class="疑似リンク-ラッパー"><a class="疑似リンク" data-親ページ="ranking.cgi" data-ページ="0">$files[$i][0]</a> / </p>
+        <h2>$files[$in{no}][0]</h2>
+        <div id="ranking.cgi-0">
+          <table class="table1">
+            <tr>
+              <th>ランク</th>
+              <th>ポイント</th>
+              <th>名前＠ギルド</th>
+              <th>コメント</th>
+            </tr>
+            <tr>
+              <td class="中央揃え">$count位</td>
+              <td class="中央揃え"><b>$point</b></td>
+              <td>めんばー.色とアイコンと名前とギルドを出力()</td>
+              <td>$message</td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <article id="legend.cgi" data-パラメーター="no" data-デフォルトページ="0" data-遷移後リンク無効化="true" hidden>
+        <p class="疑似リンク-ラッパー"><a class="疑似リンク" data-親ページ="legend.cgi" data-ページ="0">$files[$i][0]</a> / </p>
+        <div id="legend.cgi-0" hidden>
+          <h2>$files[$in{no}][0]</h2>
+          <table class="table1">
+            <tr>
+              <th>記念日</th>
+              <th>名前＠ギルド</th>
+              <th>コメント</th>
+            </tr>
+            <tr>
+              <td>${this.日時}</td>
+              <td>めんばー.色とアイコンと名前とギルドを出力()</td>
+              <td>${this.めっせーじ}</td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <article id="job_ranking.cgi" hidden>
+        確認処理などjob_ranking.cgi
+        <h2>人気職業ランキング</h2>
+        <div class="トップ-コンテンツ-段">
+          <table class="table1">
+            <tr>
+              <th>順位</th>
+              <th>職業名</th>
+              <th>画像</th>
+              <th>男女比</th>
+            </tr>
+            <tr>
+              <td><span class="強調">${順位}</span>位</td>
+              <td>${this.名前}</td>
+              <td>
+                <!-- img src="resource/icon/job/${this.ID}_${this.転職条件.性別 ?? `m.gif" alt="${this.名前}" /><img
+                      src="resource/icon/job/${this.ID}_f` }.gif" alt="${this.名前}" /-->
+              </td>
+              <td><img src="resource/space.gif" style="background-color: #66F; height: 5px; width: 65%"
+                  alt="$male_par%" /><img src="resource/space.gif"
+                  style="background-color: #F99; height: 5px; width: 35%" alt="$female_par%" /></td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <article id="rescue.cgi" hidden>
+        <h2>救出処理</h2>
+        <div class="システムメッセージ 救出処理-注意">
+          <ul>
+            <li>画面に何も表示されなくなってしまった</li>
+            <li>変な無限ループにはまってしまったなどの緊急救出処理用</li>
+            <li>この処理は本当にどうしようもなくなった時以外は使用しないように！</li>
+            <li>まずは、二次被害三次被害にならないように掲示板などに報告すること</li>
+            <li>何をしていて、どのタイミングでそうなってしまったのかバグった内容を詳しく報告</li>
+            <li>
+              <span class="睡眠注意">使用ペナルティ：<span id="救出処理の睡眠時間"></span>睡眠</span>
+            </li>
+            <li>寝ている状態などの待ち時間を解除するものではありません</li>
+          </ul>
+        </div>
+        <br />
+        <!-- TODO 上記br除去 フォーム1pxずれ修正-->
+        <form>
+          <table class="table1">
+            <tr>
+              <th>§プレイヤー§</th>
+            </tr>
+            <tr>
+              <td><input type="text" name="login_name" class="プレイヤーデータ入力欄" /></td>
+            </tr>
+            <tr>
+              <th class="救出処理-td">§パスワード§</th>
+            </tr>
+            <tr>
+              <td><input type="password" name="pass" class="プレイヤーデータ入力欄" /></td>
+            </tr>
+            <tr>
+              <th class="救出処理-td"><input type="submit" value="＠救出処理" /></th>
+            </tr>
+          </table>
+        </form>
+      </article>
+    </div>
+  </div>
+  <div id="party.cgi" hidden>
+    <button id="睡眠時用ろぐあうとボタン" class="button_s" hidden>＠ログアウト</button>
+    <div id="ヘッダー" class="システムメッセージ"></div>
+    <div id="メンバー一覧" class="メンバー一覧"></div>
+    <form name="form" id="form">
+      <input type="text" name="コメント" class="text_box_b" />
+      <button type="submit" class="button_s">発言</button>
+      <button type="reset" class="button_s">ｸﾘｱ</button>
+      <select name="自動更新">
+        <option value="0">なし</option>
+      </select>
+      <span id="更新カウントダウン" hidden>
+        更新 <span id="次更新までの秒数"></span>秒
+      </span>
+    </form>
+    <div id="こうどう"></div>
+    <div class="行動ゲージ外枠">
+      <div class="次の行動">次の行動</div>
+      <div class="行動ゲージ背景">
+        <div id="行動ゲージ" class="行動ゲージ">
+        </div>
+      </div>
+    </div>
+    <div id="通知欄" class="strong"></div>
+    <hr class="チャット区切り線">
+    <div id="チャット欄" class="チャット欄"></div>
+  </div>
+  <div id="エラー" hidden>
+    <div class="システムメッセージ">
+      <span id="エラー内容"></span><br /><br />
+    </div>
+    <p><a id="エラー-トップへ" class="とっぷへ 疑似リンク" data-ページ="index.cgi">ＴＯＰ</a></p>
+  </div>
+  <div id="monster_book.html" hidden>
+    <a class="疑似リンク" data-ページ="index.cgi">ＴＯＰへ戻る</a>
+    <button>閉じる</button>
+    <a class="疑似リンク" data-ページ="player.cgi?id=~~~"><span id="モンスターブック-プレイヤー名1"></span>の軌跡</a>
+    <h2><span id="モンスターブック-プレイヤー名2"></span>のモンスターブック　コンプリート率《<span id="モンスターブック-コンプリート率" class="important"></span>％》
+    </h2>
+    <form id="pager" class="pager">
+      <img src="resource/icon/tablesorter/first.png" class="first" />
+      <img src="resource/icon/tablesorter/prev.png" class="prev" />
+      <input type="text" class="pagedisplay" />
+      <img src="resource/icon/tablesorter/next.png" class="next" />
+      <img src="resource/icon/tablesorter/last.png" class="last" />
+      <select class="pagesize">
+        <option value="30">30</option>
+        <option value="50" selected="selected">50</option>
+        <option value="100">100</option>
+      </select>
+    </form>
+    <table class="tablesorter">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>名前</th>
+          <th>生息地</th>
+          <th>強さ</th>
+          <th>ＨＰ</th>
+          <th>ＭＰ</th>
+          <th>攻撃</th>
+          <th>守備</th>
+          <th>素早</th>
+          <th>経験値</th>
+          <th>ゴールド</th>
+          <th>登録日</th>
+        </tr>
+      </thead>
+      <tbody id="モンスターブック内容">
+      </tbody>
+    </table>
+  </div>
+  <div id="アイテム図鑑" hidden>
+    <button id="アイテム図鑑-戻る">戻る</button>
+    <h2><span id="アイテム図鑑-プレイヤー名"></span>のアイテム図鑑</h2>
+    <h2>武器図鑑 《コンプリート率 <span id="武器コンプリート率" class="強調"></span>％》</h2>
+    <div class="comp" hidden>Weapon Complete!!</div>
+    <table id="武器図鑑" class="table1"></table>
+    <h2>防具図鑑 《コンプリート率 <span id="防具コンプリート率" class="強調"></span>％》</h2>
+    <div class="comp" hidden>Armor Complete!!</div>
+    <table id="防具図鑑" class="table1"></table>
+    <h2>道具図鑑 《コンプリート率 <span id="道具コンプリート率" class="強調"></span>％》</h2>
+    <div class="comp" hidden>Item Complete!!</div>
+    <table id="道具図鑑" class="table1"></table>
+  </div>
+  <div id="ジョブマスター" hidden>
+    <button id="ジョブマスター-戻る">戻る</button>
+    <h2><span id="ジョブマスター-プレイヤー名"></span>のジョブマスター率《<span id="ジョブマスター率" class="強調"></span>％》</h2>
+    <table id="ジョブマスター一覧" class="table1"></table>
+  </div>
+  <div id="プロフィール" hidden>
+    <span id="プロフィール-変更時メッセージ" hidden>プロフィールを変更しました</span>
+    <!-- TODO 戻るボタンは(root)/profile.cgiの時は動作変える 閉じるボタンはroot時のみ表示 -->
+    <div id="プロフィール表示画面">
+      <button id="プロフィール-戻る">戻る</button>
+      <h2><span id="プロフィール表示画面-プレイヤー名"></span>のプロフィール</h2>
+      <table id="プロフィール表示画面-テーブル" class="プロフィール" cellpadding="3">
+      </table>
+    </div>
+    <div id="プロフィール入力画面" hidden>
+      <span id="プロフィール入力画面-プレイヤー名"></span>のプロフィール：全角<span id="プロフィール-全角最大文字数"></span>文字(半角<span id="プロフィール-最大文字数"></span>)まで
+      <form name="プロフィール">
+        <table id="プロフィール入力画面-テーブル" class="プロフィール" cellpadding="3">
+        </table>
+        <p><button type="submit" class="button1">変更する</button></p>
+      </form>
+    </div>
+  </div>
+  <footer class="フッター">
+    + ＠パーティーII Ver1.43 CGI-Sweets Ama楽.net +
+  </footer>
+</body>
+
+</html>

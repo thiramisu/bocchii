@@ -1,0 +1,601 @@
+.＠パーティーII {
+  margin: 0 5px;
+  padding: 0 5px;
+  font-family: vertical;
+  color: #FFF;
+  font-size: 80%;
+  background-color: #000;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+a {
+  color: #69F;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #FCC;
+}
+
+.トップ-ヘッダー-リンク:hover {
+  background-color: transparent;
+}
+
+a:visited {
+  color: #F0F;
+}
+
+a:active {
+  color: #F00;
+}
+
+li {
+  margin: 0.3em;
+}
+
+.table1,
+.壁紙陳列棚 {
+  color: #FFF;
+  font-size: calc(900% / 8);
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.table1 {
+  border: 1px solid #FFF;
+  padding: 10px;
+}
+
+.トップ {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  /*
+  text-align: left;*/
+}
+
+.トップ-ヘッダー {
+  margin-bottom: 3px;
+  background: url(../resource/bg/top/1.gif);
+  height: 87px;
+  padding: 3px 577px 0 3px;
+}
+
+.トップ-コンテンツ-段 {
+  display: flex;
+  align-items: flex-start;
+  padding: 1px;
+}
+
+.トップ-コンテナ {
+  margin: 2px;
+}
+
+.menu_button {
+  background: url(../resource/bg/back1.gif) border-box;
+  border: 1px solid #99C;
+  box-sizing: border-box;
+  display: block;
+  width: 90%;
+  font-size: 130%;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 2px;
+  padding-left: 7px;
+}
+
+.menu_button:hover {
+  color: #FF0;
+  border: 1px solid #CFC;
+  background: url(../resource/bg/back2.gif);
+}
+
+.menu_button .text_small {
+  font-size: 11px;
+  color: #FFF;
+  font-weight: normal;
+}
+
+.ナビゲーション {
+  float: left;
+  width: 180px;
+}
+
+/*
+.ナビゲーション ul {
+  margin: 0;
+  padding: 0;
+}
+
+.ナビゲーション ul li {
+  margin: 0;
+  padding: 0 0 0 10px;
+  list-style: none;
+  font-size: 120%;
+  border-top: 1px solid #C0C;
+  border-bottom: 1px solid #C0C;
+  display: block;
+}
+
+.ナビゲーション ul li a {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+}
+*/
+
+.コンテンツ {
+  margin-left: 180px;
+}
+
+.プレイヤー関連情報 {
+  font-size: calc(900% / 8);
+}
+
+.ログインプレイヤーリスト {
+  height: 200px;
+  width: 400px;
+  padding: 5px;
+  text-align: left;
+  border: 3px solid #CCC;
+  background-color: #333;
+  overflow: auto;
+}
+
+.ログイン情報入力欄 {
+  margin: 0 calc(5em / 9);
+  padding: calc(10em / 9);
+}
+
+.ログイン情報入力欄-td {
+  font-size: calc(800% / 9);
+  text-align: center;
+}
+
+.トップ-すくしょヘッダー {
+  display: block;
+  margin-top: 1.5em;
+  width: fit-content;
+}
+
+.ギルドランキング-コンテナ {
+  border: 1px solid #FFF;
+  padding: 11px;
+  color: #FFF;
+  font-size: calc(900% / 8);
+}
+
+.ギルドランキング-インナー {
+  padding: 2px;
+}
+
+.疑似リンク-ラッパー {
+  cursor: text;
+}
+
+.現在リンク {
+  background-color: inherit !important;
+  color: inherit !important;
+  cursor: text !important;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.救出処理-td {
+  padding-top: 0;
+}
+
+/*--------------------------------------
+ 文字色
+--------------------------------------*/
+
+/* 行動することはできません、戦う相手が見つかりませんなど強調文字 */
+
+.strong {
+  font-weight: bold;
+  color: #FF6;
+}
+
+/* ダメージの数字 */
+
+.damage {
+  font-weight: bold;
+  color: #F00;
+}
+
+/* ○○をたおした！、○○はやられてしまった！ */
+
+.die {
+  font-weight: bold;
+  color: #F00;
+}
+
+/* 回復の数字 */
+
+.heal {
+  font-weight: bold;
+  color: #0CC;
+}
+
+/* 生き返った */
+
+.revive {
+  font-weight: bold;
+  color: #0FF;
+}
+
+/* ステータス異常 */
+
+.state {
+  color: #C9C;
+}
+
+/* 一時的状態 */
+
+.tmp {
+  color: #6FC;
+}
+
+/* テンションの数字 */
+
+.tenshon {
+  font-weight: bold;
+  color: #FF0;
+}
+
+/* ステータス増大 */
+
+.st_up {
+  color: #9CF;
+}
+
+/* ステータス減少 */
+
+.st_down {
+  color: #F99;
+}
+
+/* レベルが上がった♪ */
+
+.lv_up {
+  color: #FF0;
+}
+
+/* 経験値とお金を手に入れた */
+
+.get {
+  color: #9FC;
+}
+
+/* ささやき */
+
+.whisper {
+  color: #0FF;
+}
+
+/* 会心の一撃！ */
+
+.kaishin {
+  font-weight: bold;
+}
+
+/* コンプリート */
+
+.comp {
+  font-weight: bold;
+  font-style: italic;
+  color: #FF0;
+}
+
+.未転職 {
+  color: #666;
+}
+
+.未マスター {
+  padding-top: 1.5em;
+}
+
+.ジョブマスター済み {
+  color: #FF0;
+}
+
+/* HPゲージ */
+
+.gage_bar2 {
+  height: 5px;
+  border: 1px outset #933;
+  background-color: #F66;
+  vertical-align: top;
+}
+
+/* HPゲージ背景 */
+
+.gage_back2 {
+  margin: 0px 5px 2px 5px;
+  text-align: left;
+  background-color: #900;
+  width: 60px;
+  height: 7px;
+  overflow: hidden;
+}
+
+/*--------------------------------------
+ セレクト
+--------------------------------------*/
+
+select {
+  color: #FFF;
+  background-color: #003;
+}
+
+.select1 {
+  color: #FFF;
+  background-color: #003;
+  margin-top: 1px;
+  width: 120px;
+}
+
+/*--------------------------------------
+ テキストボックス
+--------------------------------------*/
+
+.プレイヤーデータ入力欄, .text_box_s, .text_box_b {
+  background-color: #003;
+  border: 1px solid #FFF;
+  color: #FFC;
+  height: 16px;
+  padding: 1px 2px;
+}
+
+.プレイヤーデータ入力欄 {
+  vertical-align: top;
+  width: 114px;
+}
+
+.text_box_s {
+  width: 70px;
+}
+
+.text_box_b {
+  width: 354px;
+}
+
+.textarea1 {
+  width: 500px;
+  color: #FFC;
+  background-color: #003;
+}
+
+.強調 {
+  font-weight: bold;
+}
+
+#form {
+  margin-top: 1px;
+}
+
+/* party.cgi */
+
+.メンバー {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  margin: 3px;
+  padding: 0;
+}
+
+.メンバー名 {
+  background-color: #333;
+  text-align: center;
+}
+
+.戦闘メンバー名 {
+	width: 70px; 
+	font-size: 11px;
+	background-color: #333;
+}
+
+.メンバー一覧 {
+  align-items: flex-end;
+  display: flex;
+  background: #333 repeat-x left bottom;
+}
+
+.こうどう {
+  margin-right: 1em;
+}
+
+.こうどう::after {
+  content: " ";
+}
+
+.次の行動, .タイムスタンプ {
+  font-size: x-small;
+}
+
+.行動ゲージ外枠 {
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+}
+
+.行動ゲージ {
+  height: 8px;
+  border: 1px outset #66F;
+  background-color: #33F;
+  vertical-align: top;
+}
+
+.行動ゲージ-完了 {
+  border-right: 0px;
+  background-color: #3FF;
+}
+
+.行動ゲージ背景 {
+  background-color: #666;
+  border-right: 1px solid #666;
+  height: 10px;
+  overflow: hidden;
+  width: 140px;
+}
+
+.チャット欄 {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.チャット区切り線 {
+  border-bottom: 0;
+  height: 0;
+  width: calc(100% - 2px);
+}
+
+.チャット日時 {
+  font-size: x-small;
+}
+
+.ささやき {
+  color: #0FF;
+}
+
+.とっぷへ {}
+
+.システムメッセージ {
+  padding: 3px;
+  border: 1px solid #FFF;
+  background-color: #336;
+}
+
+.フッター {
+  clear: both;
+  text-align: center;
+  font-size: 11px;
+}
+
+.救出処理-注意 {
+  width: 600px;
+}
+
+.睡眠注意 {
+  color: #F00;
+}
+
+.中央揃え {
+  text-align: center;
+}
+
+.数値 {
+  text-align: right;
+}
+
+.新規登録-th {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+.新規登録-td {
+  display: flex;
+  flex-direction: column;
+}
+
+.新規登録-説明 {
+  padding-top: 5px;
+}
+
+.新規登録-性別選択 {
+  margin-bottom: -1px;
+}
+
+.ジョブマスターの職業 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.プロフィール {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  font-size: calc(900% / 8);
+  vertical-align: top;
+  width: 440px;
+}
+
+.プロフィール行 {
+  display: flex;
+  flex-direction: column;
+}
+
+.プロフィール項目名 {
+  display: block;
+  border: 2px solid #999;
+  background: #336;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.プロフィール内容 {
+  border: 0 solid #999;
+  border-width: 0 2px;
+  display: block;
+  background: #333;
+  white-space: nowrap;
+}
+
+.プロフィール行:last-of-type>.プロフィール内容 {
+  border-bottom-width: 2px;
+}
+
+.プロフィール入力 {
+  font-size: calc(800% / 9);
+}
+
+.プロフィール入力欄 {
+  vertical-align: top;
+}
+
+.壁紙一覧-td {
+  vertical-align: bottom;
+}
+
+.壁紙一覧-内容 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.仕切り線 {
+  color: #99C;
+}
+
+.テンション5 {
+  color: #FF9;
+}
+
+.テンション20 {
+  color: #FC0;
+}
+
+.テンション50 {
+  color: #FF0;
+}
+
+.テンション100 {
+  color: #F00;
+}
